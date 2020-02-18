@@ -5,8 +5,11 @@ var url = 'http://jsonplaceholder.typicode.com/todos/1';
 axios_1["default"].get(url).then(function (response) {
     // console.log("Log: -----> : response", response.data)
     var todo = response.data;
-    var ID = todo.id;
-    var Title = todo.title;
-    var finished = todo.completed;
-    console.log("Todo with ID: " + ID + "\n                 Has a title of: " + Title + "\n                 Is it finished ? " + finished + " ");
+    var id = todo.id;
+    var title = todo.title;
+    var completed = todo.completed;
+    logTodo(id, title, completed);
 });
+var logTodo = function (id, title, completed) {
+    console.log("Todo with ID: " + id + ", Has a title of: " + title + ", Is it finished ? " + completed + " ");
+};
